@@ -33,3 +33,5 @@ variable "aws_ec2_object" {
     ami = "ubuntu-aef51"
   }
 }
+
+variable "no_of_students" {}

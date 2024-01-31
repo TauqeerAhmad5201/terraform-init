@@ -11,3 +11,7 @@ resource "local_file" "devops-var" {
 output "aws_ec2_info" {
   value = var.aws_ec2_object.instances
 }
+
+output "tf_batch_students" {
+  value = var.no_of_students
+}
