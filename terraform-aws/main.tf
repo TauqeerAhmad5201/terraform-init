@@ -15,18 +15,19 @@ provider "aws" {
 
 //creating aws instances
 resource "aws_instance" "my_ec2_instance" {
+  count = 3
   ami = "ami-0c7217cdde317cfec"
   instance_type = "t2.micro"
   tags = {
-    Name = "Terraform-instance"
+    Name = "Terraform-instance-${count.index}"
   }
 }
 
 //creating aws s3 bucket
-resource "aws_s3_bucket" "my_s3_bucket" {
-  bucket = "bucket-1"
-  tags = {
-    Name = "bucket-1"
-    Environment = "Dev"
-  }
-}
+# resource "aws_s3_bucket" "my_s3_bucket" {
+#   bucket = "bucket-1"
+#   tags = {
+#     Name = "bucket-1"
+#     Environment = "Dev"
+#   }
+# }
