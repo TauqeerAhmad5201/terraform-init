@@ -13,9 +13,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-locals {
-  instance_name = toset(["Tauqeer", "Anas", "Ameen", "Pablo"])
-}
+
 //creating aws instances
 resource "aws_instance" "my_ec2_instance" {
   for_each = local.instance_name
