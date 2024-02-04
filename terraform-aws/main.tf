@@ -17,7 +17,7 @@ provider "aws" {
 //creating aws instances
 resource "aws_instance" "my_ec2_instance" {
   for_each = local.instance_name
-  ami = "ami-0c7217cdde317cfec"
+  ami = each.value
   instance_type = "t2.micro"
   tags = {
     Name = each.key
